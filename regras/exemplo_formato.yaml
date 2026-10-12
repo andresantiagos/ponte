@@ -1,0 +1,27 @@
+# EXEMPLO DE FORMATO. NÃO É REGRA VALIDADA. NÃO USAR EM PRODUÇÃO.
+
+versao_arvore: "0000.00.00"
+ramo: exemplo
+
+regras:
+  - id: exemplo.gravidez_confirmada
+    status: rascunho
+    pergunta: "Você está grávida no momento?"
+    opcoes:
+      - sim
+      - nao
+      - prefere_nao_responder
+    desfechos:
+      sim:
+        tipo: encaminhar_cras
+        texto_base: "Vamos verificar os caminhos de orientação. [texto pendente de validação]"
+      nao:
+        tipo: sem_possibilidade_aparente
+        texto_base: "Com essas respostas, não encontramos um caminho aparente. [texto pendente de validação]"
+      prefere_nao_responder:
+        tipo: encaminhar_cras
+        texto_base: "Sem problema. Se quiser, o CRAS pode orientar. [texto pendente de validação]"
+    fonte_oficial: pendente
+    data_fonte: pendente
+    validado_por: pendente
+    data_validacao: pendente
