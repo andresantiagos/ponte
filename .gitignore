@@ -1,0 +1,6 @@
+.env
+logs/
+dados/
+*.csv
+*.xlsx
+__pycache__/
