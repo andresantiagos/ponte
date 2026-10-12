@@ -34,3 +34,32 @@ Ninguém aprova a própria mudança.
 5. **Revisão.** Outra pessoa revisa o diff antes da aprovação. Se a equipe for de uma única pessoa, a revisão é feita pelo validador de conteúdo ou por um revisor externo combinado no contrato.
 6. **Entrada em produção.** Só após aprovação registrada. Mudança aprovada é publicada com a versão da árvore atualizada.
 7. **Monitoramento.** Acompanhar as primeiras 24 horas com verificação manual, conforme o runbook.
+
+## 4. Mudanças de emergência
+Quando for preciso corrigir um erro grave que está causando dano, a correção pode ser publicada antes da validação completa, desde que:
+- o incidente esteja registrado conforme `incidentes.md`;
+- a correção seja a mínima possível, sem mudanças adicionais;
+- o responsável técnico e o responsável pela operação aprovem por escrito antes da publicação;
+- a validação completa seja feita em até [prazo a definir] após a publicação, e a correção definitiva registrada no `CHANGELOG.md`.
+
+Não existe mudança de emergência para alterar a triagem de emergência em si. Esse ponto só muda com o processo normal.
+
+## 5. Versionamento
+- A árvore de decisão tem número de versão (formato `AAAA.MM.NN`).
+- Toda versão em produção é uma tag no Git.
+- Cada desfecho registrado guarda a versão da árvore usada, para permitir auditoria.
+- Reversão: é possível voltar à versão anterior com a tag, sem apagar histórico.
+
+## 6. Registro no CHANGELOG
+Cada entrada tem este formato:
+
+    ## AAAA.MM.NN — [data]
+    - Tipo: [regra | texto | prompt | fluxo | rag | configuração | emergência]
+    - Descrição: [o que mudou]
+    - Fonte: [link ou referência oficial, com data de consulta]
+    - Motivo: [por que mudou]
+    - Validado por: [nome e cargo]
+    - Aprovado por: [nome e cargo]
+
+## 7. Revisão deste processo
+Revisar a cada seis meses, ou após qualquer incidente classificado como crítico ou alto.
